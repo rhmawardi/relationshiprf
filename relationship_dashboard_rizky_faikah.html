@@ -1,0 +1,335 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --color-background-primary: #121212;
+  --color-background-secondary: #1E1E1E;
+  --color-border-tertiary: #333333;
+  --color-text-primary: #E8E8E8;
+  --color-text-secondary: #AAAAAA;
+  --color-text-tertiary: #888888;
+  --border-radius-lg: 16px;
+  --border-radius-md: 8px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif; background-color: var(--color-background-primary); color: var(--color-text-primary);}
+.dash{padding:1.5rem 0;max-width:860px;margin:0 auto}
+.hero{text-align:center;padding:1.5rem 0 2rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:2rem}
+.hero-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:500;color:var(--color-text-primary);letter-spacing:-0.3px}
+.hero-sub{font-size:13px;color:var(--color-text-secondary);margin-top:6px}
+.pill{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:500;margin:0 4px}
+.pill-pink{background:rgba(212,83,126,0.2);color:#F4C0D1}
+.pill-blue{background:rgba(55,138,221,0.2);color:#B5D4F4}
+.pill-teal{background:rgba(29,158,117,0.2);color:#9FE1CB}
+.section-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem}
+.card-accent-pink{border-top:3px solid #D4537E}
+.card-accent-blue{border-top:3px solid #378ADD}
+.card-accent-teal{border-top:3px solid #1D9E75}
+.profile-header{display:flex;align-items:center;gap:12px;margin-bottom:1rem}
+.avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;flex-shrink:0}
+.avatar-pink{background:rgba(212,83,126,0.2);color:#F4C0D1}
+.avatar-blue{background:rgba(55,138,221,0.2);color:#B5D4F4}
+.profile-name{font-family:'Playfair Display',serif;font-size:17px;color:var(--color-text-primary)}
+.profile-sub{font-size:12px;color:var(--color-text-secondary);margin-top:2px}
+.trait-list{margin-bottom:1rem}
+.trait-item{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.trait-label{font-size:12px;color:var(--color-text-secondary);width:140px;flex-shrink:0}
+.trait-bar{flex:1;height:5px;background:var(--color-background-secondary);border-radius:3px;overflow:hidden}
+.fill-pink{background:#D4537E;height:100%;border-radius:3px}
+.fill-blue{background:#378ADD;height:100%;border-radius:3px}
+.trait-val{font-size:11px;font-weight:500;width:28px;text-align:right;color:var(--color-text-secondary)}
+.tag-group{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tag{font-size:11px;padding:3px 8px;border-radius:var(--border-radius-md);border:0.5px solid}
+.tag-plus-pink{background:rgba(212,83,126,0.1);color:#F4C0D1;border-color:rgba(212,83,126,0.3)}
+.tag-plus-blue{background:rgba(55,138,221,0.1);color:#B5D4F4;border-color:rgba(55,138,221,0.3)}
+.tag-minus{background:var(--color-background-secondary);color:var(--color-text-secondary);border-color:var(--color-border-tertiary)}
+.sub-title{font-size:12px;font-weight:500;color:var(--color-text-secondary);margin-bottom:6px}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1rem 0}
+.swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.swot-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem}
+.swot-s{background:rgba(29,158,117,0.05)}
+.swot-w{background:rgba(212,83,126,0.05)}
+.swot-o{background:rgba(55,138,221,0.05)}
+.swot-t{background:rgba(186,117,23,0.05)}
+.swot-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.swot-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500}
+.swot-s .swot-icon{background:rgba(29,158,117,0.2);color:#9FE1CB}
+.swot-w .swot-icon{background:rgba(212,83,126,0.2);color:#F4C0D1}
+.swot-o .swot-icon{background:rgba(55,138,221,0.2);color:#B5D4F4}
+.swot-t .swot-icon{background:rgba(186,117,23,0.2);color:#FAC775}
+.swot-title{font-size:14px;font-weight:500}
+.swot-s .swot-title{color:#9FE1CB}
+.swot-w .swot-title{color:#F4C0D1}
+.swot-o .swot-title{color:#B5D4F4}
+.swot-t .swot-title{color:#FAC775}
+.swot-list{list-style:none;padding:0}
+.swot-list li{font-size:12px;color:var(--color-text-secondary);padding:4px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:6px}
+.swot-list li:last-child{border-bottom:none}
+.swot-list li::before{content:'';display:block;width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.swot-s li::before{background:#1D9E75}
+.swot-w li::before{background:#D4537E}
+.swot-o li::before{background:#378ADD}
+.swot-t li::before{background:#BA7517}
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem}
+.metric-card{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:1rem;text-align:center;border:0.5px solid var(--color-border-tertiary)}
+.metric-val{font-size:24px;font-weight:500;color:var(--color-text-primary)}
+.metric-lbl{font-size:11px;color:var(--color-text-secondary);margin-top:3px}
+.chart-wrap{position:relative;width:100%;height:240px;margin-bottom:1.5rem}
+.chart-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--color-text-secondary);margin-bottom:8px}
+.legend-dot{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:4px}
+.full-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:1.5rem}
+.insight-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary)}
+.insight-row:last-child{border-bottom:none}
+.insight-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.insight-text{font-size:13px;color:var(--color-text-secondary);line-height:1.5}
+.insight-text strong{color:var(--color-text-primary);font-weight:500}
+@media(max-width:600px){.two-col,.swot-grid,.metrics-grid{grid-template-columns:1fr}}
+</style>
+
+<div class="dash">
+
+<div class="hero">
+  <div class="hero-title">Rizky &amp; Faikah — Analisis Hubungan</div>
+  <div class="hero-sub">Berdasarkan <strong>94.000+ pesan</strong> WhatsApp &nbsp;|&nbsp; <span class="pill pill-pink">Juni 2024</span> hingga <span class="pill pill-blue">April 2026</span> &nbsp;|&nbsp; <span class="pill pill-teal">~22 bulan</span></div>
+</div>
+
+<div class="section-label">Profil Karakter</div>
+<div class="two-col">
+  <div class="card card-accent-blue">
+    <div class="profile-header">
+      <div class="avatar avatar-blue">RH</div>
+      <div>
+        <div class="profile-name">Rizky</div>
+        <div class="profile-sub">Analitis · Tekun · Inovatif</div>
+      </div>
+    </div>
+    <div class="sub-title">Dimensi karakter</div>
+    <div class="trait-list">
+      <div class="trait-item"><span class="trait-label">Tekun &amp; disiplin</span><div class="trait-bar"><div class="fill-blue" style="width:90%"></div></div><span class="trait-val">90</span></div>
+      <div class="trait-item"><span class="trait-label">Tech-savvy &amp; AI</span><div class="trait-bar"><div class="fill-blue" style="width:93%"></div></div><span class="trait-val">93</span></div>
+      <div class="trait-item"><span class="trait-label">Analitis &amp; detail</span><div class="trait-bar"><div class="fill-blue" style="width:88%"></div></div><span class="trait-val">88</span></div>
+      <div class="trait-item"><span class="trait-label">Romantis</span><div class="trait-bar"><div class="fill-blue" style="width:95%"></div></div><span class="trait-val">95</span></div>
+      <div class="trait-item"><span class="trait-label">Sabar &amp; suportif</span><div class="trait-bar"><div class="fill-blue" style="width:88%"></div></div><span class="trait-val">88</span></div>
+      <div class="trait-item"><span class="trait-label">Inisiatif</span><div class="trait-bar"><div class="fill-blue" style="width:85%"></div></div><span class="trait-val">85</span></div>
+    </div>
+    <hr class="divider">
+    <div class="sub-title">Kelebihan</div>
+    <div class="tag-group">
+      <span class="tag tag-plus-blue">Rajin & kerja keras</span>
+      <span class="tag tag-plus-blue">Melek teknologi & AI</span>
+      <span class="tag tag-plus-blue">Pembimbing yang sabar</span>
+      <span class="tag tag-plus-blue">Konsisten ekspresikan cinta</span>
+      <span class="tag tag-plus-blue">Kreatif (TikTok, web dev)</span>
+      <span class="tag tag-plus-blue">Selalu perhatian & care</span>
+    </div>
+    <div style="margin-top:10px">
+    <div class="sub-title">Kekurangan</div>
+    <div class="tag-group">
+      <span class="tag tag-minus">Jadwal tidur kurang teratur</span>
+      <span class="tag tag-minus">Terlalu analitis saat romantis</span>
+      <span class="tag tag-minus">Kadang terlalu perfeksionis</span>
+    </div>
+    </div>
+  </div>
+
+  <div class="card card-accent-pink">
+    <div class="profile-header">
+      <div class="avatar avatar-pink">FA</div>
+      <div>
+        <div class="profile-name">Faikah</div>
+        <div class="profile-sub">Hangat · Ekspresif · Perhatian</div>
+      </div>
+    </div>
+    <div class="sub-title">Dimensi karakter</div>
+    <div class="trait-list">
+      <div class="trait-item"><span class="trait-label">Caring &amp; perhatian</span><div class="trait-bar"><div class="fill-pink" style="width:95%"></div></div><span class="trait-val">95</span></div>
+      <div class="trait-item"><span class="trait-label">Ekspresif &amp; terbuka</span><div class="trait-bar"><div class="fill-pink" style="width:93%"></div></div><span class="trait-val">93</span></div>
+      <div class="trait-item"><span class="trait-label">Humoris &amp; playful</span><div class="trait-bar"><div class="fill-pink" style="width:88%"></div></div><span class="trait-val">88</span></div>
+      <div class="trait-item"><span class="trait-label">Religius &amp; berprinsip</span><div class="trait-bar"><div class="fill-pink" style="width:90%"></div></div><span class="trait-val">90</span></div>
+      <div class="trait-item"><span class="trait-label">Murah hati (berbagi)</span><div class="trait-bar"><div class="fill-pink" style="width:92%"></div></div><span class="trait-val">92</span></div>
+      <div class="trait-item"><span class="trait-label">Inisiatif</span><div class="trait-bar"><div class="fill-pink" style="width:68%"></div></div><span class="trait-val">68</span></div>
+    </div>
+    <hr class="divider">
+    <div class="sub-title">Kelebihan</div>
+    <div class="tag-group">
+      <span class="tag tag-plus-pink">Hangat & ekspresif</span>
+      <span class="tag tag-plus-pink">Selalu mengingatkan makan & istirahat</span>
+      <span class="tag tag-plus-pink">Humoris & playful</span>
+      <span class="tag tag-plus-pink">Suka berbagi materi/info</span>
+      <span class="tag tag-plus-pink">Jujur tentang perasaan</span>
+      <span class="tag tag-plus-pink">Rajin sholat & islami</span>
+    </div>
+    <div style="margin-top:10px">
+    <div class="sub-title">Kekurangan</div>
+    <div class="tag-group">
+      <span class="tag tag-minus">Kadang kurang percaya diri</span>
+      <span class="tag tag-minus">Sering ketiduran saat mau telpon</span>
+      <span class="tag tag-minus">Inisiatif masih rendah</span>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-label">Kesehatan Hubungan</div>
+<div class="metrics-grid">
+  <div class="metric-card"><div class="metric-val" style="color:#D4537E">97%</div><div class="metric-lbl">Ekspresi cinta</div></div>
+  <div class="metric-card"><div class="metric-val" style="color:#378ADD">94%</div><div class="metric-lbl">Konsistensi komunikasi</div></div>
+  <div class="metric-card"><div class="metric-val" style="color:#1D9E75">90%</div><div class="metric-lbl">Saling mendukung</div></div>
+  <div class="metric-card"><div class="metric-val" style="color:#BA7517">92%</div><div class="metric-lbl">Keselarasan nilai</div></div>
+  <div class="metric-card"><div class="metric-val" style="color:#D4537E">88%</div><div class="metric-lbl">Kepercayaan</div></div>
+  <div class="metric-card"><div class="metric-val" style="color:#185FA5">75%</div><div class="metric-lbl">Manajemen LDR</div></div>
+</div>
+
+<div class="full-card">
+  <div class="section-label" style="margin-bottom:0.75rem">Perbandingan karakter dalam hubungan</div>
+  <div class="chart-legend">
+    <span><span class="legend-dot" style="background:#378ADD"></span>Rizky</span>
+    <span><span class="legend-dot" style="background:#D4537E"></span>Faikah</span>
+  </div>
+  <div class="chart-wrap">
+    <canvas id="radarChart" role="img" aria-label="Radar chart membandingkan karakter Rizky dan Faikah dalam 6 dimensi: tekun, romantis, analitis, caring, ekspresif, dan religius.">Rizky unggul di tekun (90), analitis (88), dan romantis (95). Faikah unggul di caring (95), ekspresif (93), dan religius (90).</canvas>
+  </div>
+</div>
+
+<div class="section-label">Analisis SWOT Hubungan</div>
+<div class="swot-grid">
+  <div class="swot-card swot-s">
+    <div class="swot-header">
+      <div class="swot-icon">S</div>
+      <div class="swot-title">Strengths (Kekuatan)</div>
+    </div>
+    <ul class="swot-list">
+      <li>Komunikasi yang sangat terbuka dan konsisten setiap hari</li>
+      <li>Nilai agama (Islam) yang sama dan dipraktikkan bersama</li>
+      <li>Background profesi yang sama (farmasis) — saling mengerti</li>
+      <li>Dukungan belajar dan karier yang sangat kuat secara mutual</li>
+      <li>Ekspresi cinta yang konsisten dan tulus dari kedua pihak</li>
+      <li>Sudah diterima dan direstui oleh orang tua Faikah</li>
+      <li>Komitmen jangka panjang (menyebut "calon istri/suami")</li>
+    </ul>
+  </div>
+
+  <div class="swot-card swot-w">
+    <div class="swot-header">
+      <div class="swot-icon">W</div>
+      <div class="swot-title">Weaknesses (Kelemahan)</div>
+    </div>
+    <ul class="swot-list">
+      <li>Hubungan jarak jauh (LDR) — belum bisa bertemu rutin</li>
+      <li>Perbedaan zona waktu 1 jam mempersulit jadwal telpon</li>
+      <li>Kadang miskomunikasi karena hanya via teks/chat</li>
+      <li>Faikah kadang insecure &amp; butuh banyak reassurance</li>
+      <li>Rizky terlalu analitis saat Faikah butuh respon emosional</li>
+      <li>Sering gagal telepon karena salah satu ketiduran</li>
+    </ul>
+  </div>
+
+  <div class="swot-card swot-o">
+    <div class="swot-header">
+      <div class="swot-icon">O</div>
+      <div class="swot-title">Opportunities (Peluang)</div>
+    </div>
+    <ul class="swot-list">
+      <li>Rencana pernikahan yang jelas dan sudah dibicarakan</li>
+      <li>Keduanya di profesi farmasi — bisa berkarier di kota yang sama</li>
+      <li>Sudah diterima ortu Faikah, Rizky bisa menjajaki ke Gorontalo</li>
+      <li>Kolaborasi mengajar dan konten bersama (TikTok, akademik)</li>
+      <li>Kematangan keduanya bertambah seiring karier yang berkembang</li>
+      <li>Fondasi pertemanan &amp; saling mengenal yang sangat kuat</li>
+    </ul>
+  </div>
+
+  <div class="swot-card swot-t">
+    <div class="swot-header">
+      <div class="swot-icon">T</div>
+      <div class="swot-title">Threats (Ancaman)</div>
+    </div>
+    <ul class="swot-list">
+      <li>Jarak fisik yang jauh bisa mengikis kedekatan emosional</li>
+      <li>Tekanan pekerjaan &amp; studi yang tinggi di kedua pihak</li>
+      <li>Belum ada kepastian kapan bisa tinggal di kota yang sama</li>
+      <li>Lingkungan sosial berbeda bisa menimbulkan ketidaksesuaian</li>
+      <li>Insecurity Faikah jika tidak dikelola bisa menjadi sumber konflik</li>
+      <li>Ekspektasi pernikahan yang terlalu cepat bisa menekan salah satu</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-label">Insight Utama</div>
+<div class="full-card">
+  <div class="insight-row">
+    <div class="insight-icon" style="background:rgba(29,158,117,0.2);color:#9FE1CB;font-size:16px">+</div>
+    <div class="insight-text"><strong>Komplementer yang kuat.</strong> Rizky membawa struktur, logika, dan inisiatif teknis — Faikah membawa kehangatan, humor, dan empati. Keduanya saling mengisi dengan sangat baik.</div>
+  </div>
+  <div class="insight-row">
+    <div class="insight-icon" style="background:rgba(55,138,221,0.2);color:#B5D4F4;font-size:16px">~</div>
+    <div class="insight-text"><strong>Pola "guru-murid" yang sehat.</strong> Rizky sering menjelaskan materi (farmasi, teknologi) ke Faikah, dan Faikah juga berbagi informasi. Ini membangun rasa hormat dan ketergantungan positif.</div>
+  </div>
+  <div class="insight-row">
+    <div class="insight-icon" style="background:rgba(212,83,126,0.2);color:#F4C0D1;font-size:16px">!</div>
+    <div class="insight-text"><strong>Kebutuhan reassurance Faikah.</strong> Faikah kadang muncul insecurity ("cintanya nanti ke orang lain"). Rizky cukup sigap merespon, tapi perlu konsisten agar tidak menjadi pola yang berulang.</div>
+  </div>
+  <div class="insight-row">
+    <div class="insight-icon" style="background:rgba(186,117,23,0.2);color:#FAC775;font-size:16px">i</div>
+    <div class="insight-text"><strong>Fondasi nilai agama yang kokoh.</strong> Keduanya konsisten mengingatkan sholat, mengucap Bismillah, dan berdoa bersama. Ini menjadi jangkar yang sangat penting untuk jangka panjang.</div>
+  </div>
+  <div class="insight-row" style="border-bottom:none">
+    <div class="insight-icon" style="background:rgba(29,158,117,0.2);color:#9FE1CB;font-size:16px">*</div>
+    <div class="insight-text"><strong>LDR dengan manajemen yang baik.</strong> Walau beda kota dan zona waktu, rutinitas "good morning" dan "selamat tidur" setiap hari menciptakan kehadiran virtual yang efektif dan menjaga intimasi.</div>
+  </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = true;
+const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+const tickColor = isDark ? 'rgba(255,255,255,0.45)' : 'rgba(0,0,0,0.4)';
+new Chart(document.getElementById('radarChart'), {
+  type: 'radar',
+  data: {
+    labels: ['Tekun & Disiplin','Romantis','Analitis & Logis','Caring & Empatik','Ekspresif','Religius & Berprinsip'],
+    datasets: [
+      {
+        label: 'Rizky',
+        data: [90, 95, 88, 78, 85, 80],
+        borderColor: '#378ADD',
+        backgroundColor: 'rgba(55,138,221,0.12)',
+        pointBackgroundColor: '#378ADD',
+        pointRadius: 4,
+        borderWidth: 2,
+        borderDash: []
+      },
+      {
+        label: 'Faikah',
+        data: [72, 85, 65, 95, 93, 90],
+        borderColor: '#D4537E',
+        backgroundColor: 'rgba(212,83,126,0.10)',
+        pointBackgroundColor: '#D4537E',
+        pointRadius: 4,
+        borderWidth: 2,
+        borderDash: [5,3]
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: {
+        min: 50, max: 100,
+        ticks: { stepSize: 10, color: tickColor, backdropColor: 'transparent', font: { size: 10 } },
+        grid: { color: gridColor },
+        pointLabels: { color: isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)', font: { size: 11 } },
+        angleLines: { color: gridColor }
+      }
+    }
+  }
+});
+</script>
